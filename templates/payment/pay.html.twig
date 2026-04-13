@@ -1,0 +1,22 @@
+{# templates/payment/pay.html.twig #}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pagament 20€</title>
+</head>
+<body>
+  <h1>Pagar 20€</h1>
+  <label>Email: <input id="email" type="email" required></label>
+
+  <div id="card-element"><!-- Stripe Element will be inserted here --></div>
+  <button id="pay-button">Pagar 20€</button>
+
+  <script>
+    // Set your publishable key as an environment variable STRIPE_PUBLISHABLE_KEY in .env
+    const STRIPE_PUBLISHABLE_KEY = "{{ env('STRIPE_PUBLISHABLE_KEY') }}";
+  </script>
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="/js/payment.js"></script>
+</body>
+</html>
